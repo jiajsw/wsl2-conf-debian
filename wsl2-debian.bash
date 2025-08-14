@@ -12,6 +12,10 @@ sudo apt upgrade -y
 # 部分图形界面 中文 显示问题
 sudo apt install -y fonts-wqy-microhei fonts-wqy-zenhei
 
+# 刷新字体
+sudo fc-cache -f -v
+
+
 sudo apt install vim -y
 
 # 设置 vim 显示行号
