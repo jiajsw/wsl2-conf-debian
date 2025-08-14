@@ -1,9 +1,16 @@
 #!/bin/bash
 
-# 备份原地址
-sudo cp  /etc/apt/sources.list /etc/apt/sources.list.bak
-# 修改镜像源
-sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.tencent.com/debian@g" /etc/apt/sources.list
+# 如果存在 /etc/apt/sources.list.bak 跳过
+if [ ! -f /etc/apt/sources.list.bak ]; then
+    # 备份原地址
+    sudo cp  /etc/apt/sources.list /etc/apt/sources.list.bak
+
+    # 修改镜像源
+    sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.tencent.com/debian@g" /etc/apt/sources.list
+
+fi
+
+
 
 sudo apt update
 
