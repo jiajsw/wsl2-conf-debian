@@ -53,6 +53,12 @@ sudo apt install -y gcc make bc libssl-dev libelf-dev flex bison libncurses-dev
 # 个人配置
 # 命令提示符 换个行
 sudo echo 'export PS1="$PS1\n\\$ "' | sudo tee -a ~/.bashrc > /dev/null
+# 打印 系统信息, neowofetch , screenfetch 或 fastfetch 都可以
+sudo apt install -y fastfetch
+# 模拟《黑客帝国》中“数字雨”效果
+sudo apt install -y cmatrix
+
+
 
 # TAB 补全
 sudo apt install -y bash-completion
@@ -66,6 +72,11 @@ sudo echo '  elif [ -f /etc/bash_completion ]; then' | sudo tee -a /etc/bash.bas
 sudo echo '    . /etc/bash_completion' | sudo tee -a /etc/bash.bashrc > /dev/null
 sudo echo '  fi' | sudo tee -a /etc/bash.bashrc > /dev/null
 sudo echo 'fi' | sudo tee -a /etc/bash.bashrc > /dev/null
+
+# 隔离 Win 主机的 PATH
+sudo echo '[interop]' | sudo tee -a /etc/wsl.conf > /dev/null
+sudo echo 'enabled=false' | sudo tee -a /etc/wsl.conf > /dev/null
+sudo echo 'appendWindowsPath=false' | sudo tee -a /etc/wsl.conf > /dev/null
 
 
 # 设置中文
