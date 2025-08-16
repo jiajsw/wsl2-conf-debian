@@ -66,7 +66,7 @@ echo "export ALL_PROXY=\"http://\$_host_ip:\$_port\"" | sudo tee -a /etc/profile
 
 
 # TAB 补全
-sudo apt install -y bash-completion
+sudo apt install -y bash-completion firefox-esr
 
 # 配置 root 也可以 tab 键补全 , 内容是从 /etc/bash.bashrc 复制的
 echo '# enable bash completion in interactive shells' | sudo tee -a /etc/bash.bashrc > /dev/null
