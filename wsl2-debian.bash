@@ -64,9 +64,11 @@ echo "_host_ip=\$(ip route show | grep -i default | awk '{print \$3}')" | sudo t
 echo "_port=8889" | sudo tee -a /etc/profile.d/proxy_setup.sh
 echo "export ALL_PROXY=\"http://\$_host_ip:\$_port\"" | sudo tee -a /etc/profile.d/proxy_setup.sh
 
+#火狐浏览器, 鬼知道这些依赖干嘛的
+sudo apt install -y firefox-esr firefox-esr-l10n-zh-cn libpci-dev libegl-dev
 
 # TAB 补全
-sudo apt install -y bash-completion firefox-esr firefox-esr-l10n-zh-cn
+sudo apt install -y bash-completion
 
 # 配置 root 也可以 tab 键补全 , 内容是从 /etc/bash.bashrc 复制的
 echo '# enable bash completion in interactive shells' | sudo tee -a /etc/bash.bashrc > /dev/null
