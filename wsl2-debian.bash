@@ -47,7 +47,10 @@ sudo apt install -y curl wget xz-utils
 # 快速访问主机的下载文件目录 , jsw 为主机用户名, 换成自己的
 sudo ln -s /mnt/c/Users/jsw/Downloads/ ~/host_download
 
-# 编译 内核
+# 安装点工具
+sudo apt install -y strace ltrace psmisc tree
+
+# 编译内核工具
 sudo apt install -y gcc make bc libssl-dev libelf-dev flex bison libncurses-dev
 
 # 个人配置
@@ -69,7 +72,6 @@ sudo apt install -y firefox-esr firefox-esr-l10n-zh-cn libpci-dev libegl-dev
 
 # TAB 补全
 sudo apt install -y bash-completion
-
 # 配置 root 也可以 tab 键补全 , 内容是从 /etc/bash.bashrc 复制的
 echo '# enable bash completion in interactive shells' | sudo tee -a /etc/bash.bashrc > /dev/null
 echo 'if ! shopt -oq posix; then' | sudo tee -a /etc/bash.bashrc > /dev/null
