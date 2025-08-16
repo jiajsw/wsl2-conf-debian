@@ -59,6 +59,11 @@ sudo apt install -y fastfetch
 sudo apt install -y cmatrix
 # 取消 WSL2 Linux TAB 补全提示音, 取消 /etc/inputrc 文件,这 # set bell-style none 一行的数值
 sudo sed -i 's/^# set bell-style none$/set bell-style none/' /etc/inputrc
+# 配置系统代理 , 按个人配置
+echo "_host_ip=\$(ip route show | grep -i default | awk '{print \$3}')" | sudo tee /etc/profile.d/proxy_setup.sh
+echo "_port=8889" | sudo tee -a /etc/profile.d/proxy_setup.sh
+echo "export ALL_PROXY=\"http://\$_host_ip:\$_port\"" | sudo tee -a /etc/profile.d/proxy_setup.sh
+
 
 # TAB 补全
 sudo apt install -y bash-completion
@@ -74,9 +79,9 @@ echo '  fi' | sudo tee -a /etc/bash.bashrc > /dev/null
 echo 'fi' | sudo tee -a /etc/bash.bashrc > /dev/null
 
 # 隔离 Win 主机的 PATH
-sudo echo '[interop]' | sudo tee -a /etc/wsl.conf > /dev/null
-sudo echo 'enabled=false' | sudo tee -a /etc/wsl.conf > /dev/null
-sudo echo 'appendWindowsPath=false' | sudo tee -a /etc/wsl.conf > /dev/null
+echo '[interop]' | sudo tee -a /etc/wsl.conf > /dev/null
+echo 'enabled=false' | sudo tee -a /etc/wsl.conf > /dev/null
+echo 'appendWindowsPath=false' | sudo tee -a /etc/wsl.conf > /dev/null
 
 
 # 设置中文
