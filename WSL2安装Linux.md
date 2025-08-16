@@ -97,6 +97,7 @@ wsl --shutdown
 
 ```
 wsl --terminate <Distribution Name>
+wsl -t <Distribution Name>
 ```
 
 ### 注销或卸载 Linux 发行版

@@ -57,21 +57,21 @@ sudo echo 'export PS1="$PS1\n\\$ "' | sudo tee -a ~/.bashrc > /dev/null
 sudo apt install -y fastfetch
 # 模拟《黑客帝国》中“数字雨”效果
 sudo apt install -y cmatrix
-
-
+# 取消 WSL2 Linux TAB 补全提示音, 取消 /etc/inputrc 文件,这 # set bell-style none 一行的数值
+sudo sed -i 's/^# set bell-style none$/set bell-style none/' /etc/inputrc
 
 # TAB 补全
 sudo apt install -y bash-completion
 
 # 配置 root 也可以 tab 键补全 , 内容是从 /etc/bash.bashrc 复制的
-sudo echo '# enable bash completion in interactive shells' | sudo tee -a /etc/bash.bashrc > /dev/null
-sudo echo 'if ! shopt -oq posix; then' | sudo tee -a /etc/bash.bashrc > /dev/null
-sudo echo '  if [ -f /usr/share/bash-completion/bash_completion ]; then' | sudo tee -a /etc/bash.bashrc > /dev/null
-sudo echo '    . /usr/share/bash-completion/bash_completion' | sudo tee -a /etc/bash.bashrc > /dev/null
-sudo echo '  elif [ -f /etc/bash_completion ]; then' | sudo tee -a /etc/bash.bashrc > /dev/null
-sudo echo '    . /etc/bash_completion' | sudo tee -a /etc/bash.bashrc > /dev/null
-sudo echo '  fi' | sudo tee -a /etc/bash.bashrc > /dev/null
-sudo echo 'fi' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo '# enable bash completion in interactive shells' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo 'if ! shopt -oq posix; then' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo '  if [ -f /usr/share/bash-completion/bash_completion ]; then' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo '    . /usr/share/bash-completion/bash_completion' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo '  elif [ -f /etc/bash_completion ]; then' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo '    . /etc/bash_completion' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo '  fi' | sudo tee -a /etc/bash.bashrc > /dev/null
+echo 'fi' | sudo tee -a /etc/bash.bashrc > /dev/null
 
 # 隔离 Win 主机的 PATH
 sudo echo '[interop]' | sudo tee -a /etc/wsl.conf > /dev/null
