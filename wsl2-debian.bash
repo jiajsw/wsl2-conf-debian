@@ -44,8 +44,11 @@ sudo apt install -y man-db manpages-zh
 # 其他必要工具
 sudo apt install -y curl wget xz-utils
 
-# 快速访问主机的下载文件目录 , jsw 为主机用户名, 换成自己的
-sudo ln -s /mnt/c/Users/jsw/Downloads/ ~/host_download
+# 快速访问宿主机的下载文件目录 , jsw 为主机用户名, 换成自己的
+host_user=jsw
+ln -s /mnt/c/Users/$host_user/Downloads/ ~/host_download
+ln -s /mnt/c/Users/$host_user/ ~/host_home
+ln -s /mnt/c/Users/$host_user/Desktop ~/host_desktop
 
 # 安装点工具
 sudo apt install -y strace ltrace psmisc tree
