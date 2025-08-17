@@ -39,7 +39,7 @@ sudo apt install vim -y
 sudo echo "set nu" | sudo tee -a /etc/vim/vimrc > /dev/null
 
 # 安装 man 中文 手册
-sudo apt install -y man-db manpages-zh
+sudo apt install -y man-db manpages-zh manpages-dev
 
 # 其他必要工具
 sudo apt install -y curl wget xz-utils
@@ -62,7 +62,7 @@ sudo apt install -y gcc make bc libssl-dev libelf-dev flex bison libncurses-dev 
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2028
-echo 'export PS1="$PS1\n\\$ "' | tee -a ~/.bashrc
+echo 'export PS1="$PS1\n\\$ "' | tee -a ~/.bashrc > /dev/null
 # 打印 系统信息, neowofetch , screenfetch 或 fastfetch 都可以
 sudo apt install -y fastfetch
 # 模拟《黑客帝国》中“数字雨”效果
