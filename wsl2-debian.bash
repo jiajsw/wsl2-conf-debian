@@ -58,7 +58,11 @@ sudo apt install -y gcc make bc libssl-dev libelf-dev flex bison libncurses-dev 
 
 # 个人配置
 # 命令提示符 换个行
-sudo echo 'export PS1="$PS1\n\\$ "' | sudo tee -a ~/.bashrc > /dev/null
+
+
+# shellcheck disable=SC2016
+# shellcheck disable=SC2028
+echo 'export PS1="$PS1\n\\$ "' | tee -a ~/.bashrc
 # 打印 系统信息, neowofetch , screenfetch 或 fastfetch 都可以
 sudo apt install -y fastfetch
 # 模拟《黑客帝国》中“数字雨”效果
