@@ -15,7 +15,8 @@ if [ ! -f /etc/apt/sources.list.bak ]; then
     sudo cp  /etc/apt/sources.list /etc/apt/sources.list.bak
 
     # 修改镜像源
-    sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.tencent.com/debian@g" /etc/apt/sources.list
+#    sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.tencent.com/debian@g" /etc/apt/sources.list
+    sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.aliyun.com/debian@g" /etc/apt/sources.list
 
 fi
 
