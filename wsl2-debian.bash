@@ -52,7 +52,7 @@ ln -s /mnt/c/Users/$host_user/ ~/host_home
 ln -s /mnt/c/Users/$host_user/Desktop ~/host_desktop
 
 # 安装点工具
-sudo apt install -y strace ltrace psmisc tree file gedit
+sudo apt install -y strace ltrace psmisc tree file gedit xxd
 
 # 编译内核工具
 sudo apt install -y gcc make bc libssl-dev libelf-dev flex bison libncurses-dev zstd
