@@ -40,7 +40,7 @@ sudo apt install vim -y
 sudo echo "set nu" | sudo tee -a /etc/vim/vimrc > /dev/null
 
 # 安装 man 中文 手册
-sudo apt install -y man-db manpages-zh manpages-dev
+sudo apt install -y man-db manpages manpages-zh manpages-dev
 
 # 其他必要工具
 sudo apt install -y curl wget xz-utils
