@@ -70,6 +70,10 @@ sudo apt install -y fastfetch
 sudo apt install -y cmatrix
 # 取消 WSL2 Linux TAB 补全提示音, 取消 /etc/inputrc 文件,这 # set bell-style none 一行的数值
 sudo sed -i 's/^# set bell-style none$/set bell-style none/' /etc/inputrc
+# 取消 man 手册 提示音
+# 禁用 less 的响铃（man 手册使用 less 作为分页器）
+echo 'export LESS="$LESS -Q"' | tee -a ~/.bashrc > /dev/null
+
 # 配置系统代理 , 按个人配置
 echo "_host_ip=\$(ip route show | grep -i default | awk '{print \$3}')" | sudo tee /etc/profile.d/proxy_setup.sh
 echo "_port=8889" | sudo tee -a /etc/profile.d/proxy_setup.sh
