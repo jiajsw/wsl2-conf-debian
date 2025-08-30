@@ -38,6 +38,7 @@ sudo apt install vim -y
 
 # 设置 vim 显示行号
 echo "set nu" | sudo tee -a /etc/vim/vimrc > /dev/null
+# 关闭 vim 提示音
 echo "set visualbell t_vb=" | sudo tee -a /etc/vim/vimrc > /dev/null
 
 # 安装 man 中文 手册
