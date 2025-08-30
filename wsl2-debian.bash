@@ -37,7 +37,8 @@ sudo fc-cache -f -v
 sudo apt install vim -y
 
 # 设置 vim 显示行号
-sudo echo "set nu" | sudo tee -a /etc/vim/vimrc > /dev/null
+echo "set nu" | sudo tee -a /etc/vim/vimrc > /dev/null
+echo "set visualbell t_vb=" | sudo tee -a /etc/vim/vimrc > /dev/null
 
 # 安装 man 中文 手册
 sudo apt install -y man-db manpages manpages-zh manpages-dev
