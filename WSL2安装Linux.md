@@ -4,6 +4,12 @@
 - 建议使用 `PowerShell`
 - 发行版 分发版 没个球区别
 
+### 最佳实践
+
+```
+wsl --install -d Debian --location F:/wsl/jia --name jia 
+```
+
 ### 设置默认 WSL 版本
 
 ```
