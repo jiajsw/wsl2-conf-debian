@@ -36,7 +36,6 @@ sudo apt install -y fonts-firacode
 sudo fc-cache -f -v
 
 
-sudo apt install ascii -y
 sudo apt install vim -y
 
 # 设置 vim 显示行号
@@ -57,7 +56,7 @@ ln -s /mnt/c/Users/$host_user/ ~/host_home
 ln -s /mnt/c/Users/$host_user/Desktop ~/host_desktop
 
 # 安装点工具
-sudo apt install -y strace ltrace psmisc tree file gedit xxd
+sudo apt install -y strace ltrace psmisc tree file gedit xxd ascii iputils-arping
 
 # 编译内核工具
 sudo apt install -y gcc make bc libssl-dev libelf-dev flex bison libncurses-dev zstd
