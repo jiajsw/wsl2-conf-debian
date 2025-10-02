@@ -17,6 +17,8 @@ if [ ! -f /etc/apt/sources.list.bak ]; then
     # 修改镜像源
 #    sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.tencent.com/debian@g" /etc/apt/sources.list
     sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.aliyun.com/debian@g" /etc/apt/sources.list
+    sudo sed -i "s@http://security.debian.org/debian-security@http://mirrors.aliyun.com/debian-security@g" /etc/apt/sources.list
+    sudo sed -i "s@http://ftp.debian.org/debian@http://mirrors.aliyun.com/debian@g" /etc/apt/sources.list
 
 fi
 
@@ -34,6 +36,7 @@ sudo apt install -y fonts-firacode
 sudo fc-cache -f -v
 
 
+sudo apt install ascii -y
 sudo apt install vim -y
 
 # 设置 vim 显示行号
