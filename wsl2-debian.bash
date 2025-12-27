@@ -56,10 +56,14 @@ ln -s /mnt/c/Users/$host_user/ ~/host_home
 ln -s /mnt/c/Users/$host_user/Desktop ~/host_desktop
 
 # 安装点工具
-sudo apt install -y strace ltrace psmisc tree file gedit xxd ascii iputils-arping
+sudo apt install -y strace ltrace psmisc tree file  xxd ascii iputils-arping
 
 # 编译内核工具
 sudo apt install -y gcc make bc libssl-dev libelf-dev flex bison libncurses-dev zstd
+
+sudo apt install -y gnome-text-editor
+
+sudo ln -sf "$(which gnome-text-editor)" /bin/gedit
 
 # 个人配置
 # 命令提示符 换个行
