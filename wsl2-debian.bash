@@ -47,7 +47,7 @@ echo "set visualbell t_vb=" | sudo tee -a /etc/vim/vimrc > /dev/null
 sudo apt install -y man-db manpages manpages-zh manpages-dev
 
 # 其他必要工具
-sudo apt install -y curl wget xz-utils
+sudo apt install -y curl wget xz-utils ssh 
 
 # 快速访问宿主机的下载文件目录 , jsw 为主机用户名, 换成自己的
 host_user=jsw
