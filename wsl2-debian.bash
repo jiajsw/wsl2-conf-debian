@@ -68,10 +68,13 @@ sudo ln -sf "$(which gnome-text-editor)" /bin/gedit
 # 个人配置
 # 命令提示符 换个行
 
+_OLD_PS1="$PS1"
+_MY_VAR_INIT=1
+PROMPT_COMMAND='PS1="$_OLD_PS1[$_MY_VAR_INIT]\n\\$ ";((_MY_VAR_INIT++))'
 
 # shellcheck disable=SC2016
 # shellcheck disable=SC2028
-echo 'export PS1="$PS1\n\\$ "' | tee -a ~/.bashrc > /dev/null
+# echo 'export PS1="$PS1\n\\$ "' | tee -a ~/.bashrc > /dev/null
 # 打印 系统信息, neowofetch , screenfetch 或 fastfetch 都可以
 sudo apt install -y fastfetch
 # 模拟《黑客帝国》中“数字雨”效果
