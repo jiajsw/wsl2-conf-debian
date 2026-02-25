@@ -1,8 +1,14 @@
 #!/bin/bash
 
+# _OLD_PS1="$PS1"
+# _MY_VAR_INIT=1
+# PROMPT_COMMAND='PS1="$_OLD_PS1[$_MY_VAR_INIT]\n\\$ ";((_MY_VAR_INIT++))'
+
+cat << 'EOF' > ~/.bashrc
 _OLD_PS1="$PS1"
 _MY_VAR_INIT=1
 PROMPT_COMMAND='PS1="$_OLD_PS1[$_MY_VAR_INIT]\n\\$ ";((_MY_VAR_INIT++))'
+EOF
 
 sudo apt update && sudo apt upgrade -y
 
