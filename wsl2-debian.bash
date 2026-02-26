@@ -13,13 +13,13 @@ fi
 if [ ! -f /etc/apt/sources.list.bak ]; then
     # 备份原地址
     sudo cp  /etc/apt/sources.list /etc/apt/sources.list.bak
-
+    
     # 修改镜像源
-#    sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.tencent.com/debian@g" /etc/apt/sources.list
+    #    sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.tencent.com/debian@g" /etc/apt/sources.list
     sudo sed -i "s@http://deb.debian.org/debian@http://mirrors.aliyun.com/debian@g" /etc/apt/sources.list
     sudo sed -i "s@http://security.debian.org/debian-security@http://mirrors.aliyun.com/debian-security@g" /etc/apt/sources.list
     sudo sed -i "s@http://ftp.debian.org/debian@http://mirrors.aliyun.com/debian@g" /etc/apt/sources.list
-
+    
 fi
 
 sudo apt update
@@ -47,7 +47,7 @@ echo "set visualbell t_vb=" | sudo tee -a /etc/vim/vimrc > /dev/null
 sudo apt install -y man-db manpages manpages-zh manpages-dev
 
 # 其他必要工具
-sudo apt install -y curl wget xz-utils ssh 
+sudo apt install -y curl wget xz-utils ssh
 
 # 快速访问宿主机的下载文件目录 , jsw 为主机用户名, 换成自己的
 host_user=jsw
@@ -68,10 +68,13 @@ sudo ln -sf "$(which gnome-text-editor)" /bin/gedit
 # 个人配置
 # 命令提示符 换个行
 
+cat >> ~/.bashrc << 'EOF'
+
 _OLD_PS1="$PS1"
 _MY_VAR_INIT=1
 PROMPT_COMMAND='PS1="$_OLD_PS1[$_MY_VAR_INIT]\n\\$ ";((_MY_VAR_INIT++))'
 
+EOF
 # shellcheck disable=SC2016
 # shellcheck disable=SC2028
 # echo 'export PS1="$PS1\n\\$ "' | tee -a ~/.bashrc > /dev/null
