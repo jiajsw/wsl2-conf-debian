@@ -12,7 +12,7 @@ EOF
 
 sudo apt update && sudo apt upgrade -y
 
-sudo apt install -y vim fonts-firacode fonts-wqy-microhei fonts-wqy-zenhei 
+sudo apt install -y vim fonts-firacode fonts-wqy-microhei fonts-wqy-zenhei
 
 # 设置 vim 显示行号
 echo "set nu" | sudo tee -a /etc/vim/vimrc > /dev/null

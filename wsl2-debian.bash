@@ -88,6 +88,18 @@ sudo sed -i 's/^# set bell-style none$/set bell-style none/' /etc/inputrc
 # 禁用 less 的响铃（man 手册使用 less 作为分页器）
 echo 'export LESS="$LESS -Q"' | tee -a ~/.bashrc > /dev/null
 
+# WSL 输入法
+sudo apt install fcitx5-chinese-addons -y
+
+# 设置输入法框架为 fcitx
+echo 'export XMODIFIERS=@im=fcitx' | tee -a ~/.bashrc > /dev/null
+echo 'export GTK_IM_MODULE=fcitx' | tee -a ~/.bashrc > /dev/null
+echo 'export QT_IM_MODULE=fcitx' | tee -a ~/.bashrc > /dev/null
+echo 'export DefaultIMModule=fcitx' | tee -a ~/.bashrc > /dev/null
+
+echo '(pgrep -x fcitx5 > /dev/null || fcitx5 --disable waylandim -d > /dev/null 2>&1 &) disown' | tee -a ~/.bashrc > /dev/null
+
+
 # 配置系统代理 , 按个人配置
 echo "_host_ip=\$(ip route show | grep -i default | awk '{print \$3}')" | sudo tee /etc/profile.d/_proxy_setup.sh
 echo "_port=8888" | sudo tee -a /etc/profile.d/_proxy_setup.sh
