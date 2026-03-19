@@ -97,7 +97,6 @@ echo 'export GTK_IM_MODULE=fcitx' | tee -a ~/.bashrc > /dev/null
 echo 'export QT_IM_MODULE=fcitx' | tee -a ~/.bashrc > /dev/null
 echo 'export DefaultIMModule=fcitx' | tee -a ~/.bashrc > /dev/null
 
-# echo '(pgrep -x fcitx5 > /dev/null || fcitx5 --disable waylandim -d > /dev/null 2>&1 &) disown' | tee -a ~/.bashrc > /dev/null
 echo 'pgrep -x fcitx5 > /dev/null || { fcitx5 --disable waylandim -d > /dev/null 2>&1 & disown ; }' | tee -a ~/.bashrc > /dev/null
 
 
