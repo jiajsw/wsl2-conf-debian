@@ -104,6 +104,8 @@ echo 'pgrep -x fcitx5 > /dev/null || { fcitx5 --disable waylandim -d > /dev/null
 echo "_host_ip=\$(ip route show | grep -i default | awk '{print \$3}')" | sudo tee /etc/profile.d/_proxy_setup.sh
 echo "_port=8888" | sudo tee -a /etc/profile.d/_proxy_setup.sh
 echo "export ALL_PROXY=\"http://\$_host_ip:\$_port\"" | sudo tee -a /etc/profile.d/_proxy_setup.sh
+echo "export HTTPS_PROXY=\"http://\$_host_ip:\$_port\"" | sudo tee -a /etc/profile.d/_proxy_setup.sh
+echo "export HTTP_PROXY=\"http://\$_host_ip:\$_port\"" | sudo tee -a /etc/profile.d/_proxy_setup.sh
 
 #火狐浏览器, 鬼知道这些依赖干嘛的
 sudo apt install -y firefox-esr firefox-esr-l10n-zh-cn libpci-dev libegl-dev
